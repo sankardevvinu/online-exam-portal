@@ -6,5 +6,10 @@ pipeline {
                 git 'https://github.com/sankardevvinu/online-exam-portal.git'
             }
         }
+        stage('Build') {
+            steps {
+                docker build -t demo:1 .
+            }
+        }
     }
 }
