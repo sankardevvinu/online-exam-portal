@@ -1,0 +1,10 @@
+pipeline {
+    agent any
+    stages {
+        stage('Clone') {
+            steps {
+                git clone git@github.com:sankardevvinu/online-exam-portal.git
+            }
+        }
+    }
+}
