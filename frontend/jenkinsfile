@@ -3,13 +3,12 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                sh 'rm -rf online-exam-portal'
-                sh 'git clone https://github.com/sankardevvinu/online-exam-portal.git'
+                git 'https://github.com/sankardevvinu/online-exam-portal.git'
             }
         }
         stage('Build') {
             steps {
-                 sh 'docker build -t demo:1 /var/lib/jenkins/workspace/nodejs project/online-exam-portal/frontend'
+                sh 'docker build -t demo:1 "/var/lib/jenkins/workspace/nodejs project/online-exam-portal/frontend"'
             }
         }
     }
